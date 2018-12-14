@@ -1,0 +1,19 @@
+package qa.com.game;
+
+public class Bees extends Trap {
+	private int beesPositionX;
+	private int beesPositionY;
+	
+	public void setBees() {
+		this.beesPositionX = (int) ((Math.random() * ((0 - 10) + 1)) + 0);
+		this.beesPositionY = (int) ((Math.random() * ((0 - 10) + 1)) + 0);
+	}
+	public int getBeesPositionX() {
+		return beesPositionX;
+	}
+
+	public int getBeesPositionY() {
+		return beesPositionY;
+	}
+
+}

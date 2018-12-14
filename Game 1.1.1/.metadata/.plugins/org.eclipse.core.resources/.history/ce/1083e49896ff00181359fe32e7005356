@@ -1,0 +1,22 @@
+package qa.com.game;
+
+public class Milk extends Trap {
+	private int milkPositionX;
+	private int milkPositionY;	
+
+	public void setMilk() {
+		this.milkPositionX = (int) ((Math.random() * ((0 - 10) + 1)) + 0);
+		this.milkPositionY = (int) ((Math.random() * ((0 - 10) + 1)) + 0);
+	}
+		
+		public int getMilkPositionX() {
+			return milkPositionX;
+		}
+
+		public int getMilkPositionY() {
+			return milkPositionY;
+		}
+
+	}
+
+

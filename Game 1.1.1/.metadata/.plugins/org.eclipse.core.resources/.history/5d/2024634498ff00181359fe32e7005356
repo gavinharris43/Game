@@ -1,0 +1,13 @@
+package qa.com.game;
+
+public class Bees extends Trap {
+
+
+
+	@Override
+	public void setTrap(String trap) {
+		this.trap= "bees";
+		
+	}
+
+}
