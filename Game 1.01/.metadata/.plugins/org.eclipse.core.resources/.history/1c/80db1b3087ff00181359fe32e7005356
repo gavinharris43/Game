@@ -1,0 +1,48 @@
+package qa.com.game;
+
+public class Game {
+private int startPosition= (int) ((Math.random() * ((0 - 10) + 1)) + 0);
+private int tresurePosition= (int) ((Math.random() * ((0 - 10) + 1)) + 0);
+private String alergy = alergy; 
+private String nuts = "nuts";
+private String dary = "dary";
+private String bees = "bees";
+
+public String intro(String name){
+	
+	return "Welcome to the text based game Alergy Tresure \n In this game you are required to set an alergy component to your charictor."
+			+ "\n You will have a chance to move round the map and you will find tresure boxed.\n Unfortunatly if you find one with your alergy, Game Over"
+			+ "\n Good luck on your adventure to find the tresure, mortal " + name
+			+"";
+}
+public int start() {
+	
+	
+	return startPosition;
+}
+public int tresure() {
+	
+	return tresurePosition;
+	
+}
+
+public String alergySet(String input) {
+	System.out.print("Time to chose your dealy alergy, You have a choise," +nuts+" "+dary+" "+bees+"?");
+	if (input.equals(nuts)) {
+		this.alergy= nuts;
+	return alergy;	
+	}  
+	if (input.equals(dary)) {
+		this.alergy= dary;
+	return alergy;	
+	}  
+	if (input.equals(bees)) {
+		this.alergy= bees;
+	return alergy;	
+	}  
+	
+	
+	
+}
+}
+
