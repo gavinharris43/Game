@@ -1,0 +1,16 @@
+package qa.com.game;
+
+public class Trap {
+	private String trap;
+
+
+
+	public String getTrap() {
+		return trap;
+	}
+
+	public void setTrap(String trap) {
+		this.trap = trap;
+	}
+	
+}

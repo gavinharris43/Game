@@ -1,0 +1,12 @@
+package qa.com.game;
+
+public class Milk extends Trap {
+
+	@Override
+	public void setTrap() {
+		this.trap="milk";
+	}
+
+	}
+
+
