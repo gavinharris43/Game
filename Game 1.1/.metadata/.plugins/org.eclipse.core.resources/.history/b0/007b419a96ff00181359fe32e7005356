@@ -1,0 +1,18 @@
+package qa.com.game;
+
+public class Nuts extends Trap {
+	private int nutsPositionX;
+	private int nutsPositionY;
+	
+	public void setNuts() {
+		this.nutsPositionX = (int) ((Math.random() * ((0 - 10) + 1)) + 0);
+		this.nutsPositionY = (int) ((Math.random() * ((0 - 10) + 1)) + 0);
+	}
+	public int getNutsPositionX() {
+		return nutsPositionX;
+	}
+
+	public int getNutsPositionY() {
+		return nutsPositionY;
+	}
+}

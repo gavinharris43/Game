@@ -1,0 +1,122 @@
+package qa.com.game;
+
+import java.util.Scanner;
+
+public class Game extends Trap {
+private int PositionX;
+private int PositionY;
+private int tresurePositionX;
+private int tresurePositionY;
+private String alergy; 
+private String nuts = "nuts";
+private String dary = "dary";
+private String bees = "bees";
+private String name;
+
+
+public String intro(String name){
+	this.name=name;
+	return "Welcome to the text based game Alergy Tresure \n In this game you are required to set an alergy component to your charictor."
+			+ "\n You will have a chance to move round the map and you will find tresure boxed.\n Unfortunatly if you find one with your alergy, Game Over"
+			+ "\n Good luck on your adventure to find the tresure, mortal " + name
+			+"";
+}
+public void start() {
+	this.PositionX= (int) ((Math.random() * ((0 - 10) + 1)) + 0);
+	this.PositionY= (int) ((Math.random() * ((0 - 10) + 1)) + 0);
+}
+public void tresure() {
+	this.tresurePositionX= (int) ((Math.random() * ((0 - 10) + 1)) + 0);
+	this.tresurePositionY= (int) ((Math.random() * ((0 - 10) + 1)) + 0);
+	System.out.println(PositionX+" "+PositionY+" "+ tresurePositionX+" "+tresurePositionY);
+}
+
+public  void alergyInfo() {
+	
+		System.out.print("Time to chose your dealy alergy, You have a choise, " +nuts+", "+dary+", "+bees+"?\n Defalt: nuts \n"
+				+ "Defalt Movemrnt: North");
+}
+public void move(String input) {
+	if (input.equals("north")|| input.equals("n")) {
+		north();
+	}
+	else if (input.equals("south")|| input.equals("s")) {
+		south();
+	}else if (input.equals("east")|| input.equals("e")) {
+		east();
+	}
+		else if (input.equals("west")|| input.equals("w")) {
+			west();
+		}else north();
+	
+}
+public void north() {
+	this.PositionY = PositionY+1;
+	getyourPosition();
+	foundTresure();
+}
+public void south() {
+	this.PositionY = PositionY-1;
+	getyourPosition();
+	foundTresure();
+}
+public void east() {
+	this.PositionX = PositionX+1;
+	getyourPosition();
+	foundTresure();
+}
+public void west() {
+	this.PositionX = PositionX-1;
+	getyourPosition();
+	foundTresure();
+}
+public String alergySet(String input) {
+
+	if (input.equals(nuts)) {
+		this.alergy= nuts;
+	return alergy;	
+	}  
+	if (input.equals(dary)) {
+		this.alergy= dary;
+	return alergy;	
+	}  
+	if (input.equals(bees)) {
+		this.alergy= bees;
+	return alergy;	
+	}
+	this.alergy= nuts;
+	return alergy;
+	
+}
+public void getyourPosition(){
+	System.out.print("Your position is "+PositionX+" "+PositionY+ "tresure is at "+ tresurePositionX+" "+tresurePositionY);
+	
+}	
+public void nuts(String input) {
+	if((PositionX==getNutsPositionX() && PositionY==getNutsPositionY()) || (PositionX==getMilkPositionX() && PositionY==getMilkPositionY()) || (PositionX==getBeesPositionX() && PositionY==getBeesPositionY())  )	
+	if (input==alergy){
+			System.out.println("You Found a tresure box and open it, "+ alergy +" Explodes into your face, You swell up like a bollon and you pop! \n GAME OVER!");
+			System.exit(0);
+		}else {System.out.println("You Found a tresure box and open it, "+ input +" Explodes into your face, Good fortune is on your side as your alergic to "+alergy);} 
+	}
+public boolean foundTresure() {
+	if (PositionX==tresurePositionX && PositionY==tresurePositionY) {
+		System.out.print("You have found the tresure, You Win "+ name+".");
+		System.exit(0);
+		return true;
+	}else {
+		System.out.print("You have not found the tresure yet "+ name+". Move Again:");
+		Scanner sc = new Scanner(System.in);
+		String input = sc.nextLine();
+		
+		move(input);
+		
+		return false;
+		
+	}
+
+}
+
+
+}
+
