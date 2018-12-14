@@ -1,0 +1,14 @@
+package qa.com.game;
+
+public class Game {
+private int startPosition= (int) ((Math.random() * ((0 - 10) + 1)) + 0);
+private int tresurePosition= (int) ((Math.random() * ((0 - 10) + 1)) + 0);
+
+public String intro(String name){
+	
+	return "Welcome to the text based game Alergy Tresure \n In this game you are required to set an alergy component to your charictor."
+			+ "\n You will have a chance to move round the map and you will find tresure boxed.\n Unfortunatly if you find one with your alergy, Game Over"
+			+ "\n Good luck on your adventure to find the tresure, mortal" + name;
+}
+}
+

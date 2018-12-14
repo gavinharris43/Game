@@ -1,0 +1,4 @@
+package qa.com.game;
+
+public class Nuts extends Trap {
+}

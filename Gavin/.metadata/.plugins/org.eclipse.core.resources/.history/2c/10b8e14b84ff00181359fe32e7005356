@@ -1,0 +1,6 @@
+package qa.com.game;
+
+public class game {
+private int startPosition= (int) ((Math.random() * ((0 - 10) + 1)) + 0);
+private int tresurePosition= (int) ((Math.random() * ((0 - 10) + 1)) + 0);
+}
